@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="db31063b-4351-4f98-af77-4e576abff569" activeEnvironment="Default" name="backend1" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d5eb0562-450d-4c33-8bc8-0a307fce0be6" wsaVersion="NONE" name="DurdansPatientServiceSoap12Binding" type="wsdl" bindingName="{http://service.sample.durdans.com}DurdansPatientServiceSoap12Binding" soapVersion="1_2" anonymous="optional" definition="http://192.168.55.160:9763/services/DurdansPatientService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap12Endpoint/</con:endpoint></con:endpoints><con:operation id="44184495-bbc1-4081-94f0-fb623e147adf" isOneWay="false" action="urn:deleteMediData" name="deleteMediData" bindingOperationName="deleteMediData" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3f0f4aea-574e-4e35-94c7-83e4c8addec4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://service.sample.durdans.com">
+   <soap:Header/>
+   <soap:Body>
+      <ser:deleteMediData>
+         <!--Optional:-->
+         <ser:patientId>?</ser:patientId>
+      </ser:deleteMediData>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:deleteMediData"/></con:call></con:operation><con:operation id="e64279f3-8095-48aa-97b3-cd7e2b2bc259" isOneWay="false" action="urn:postMediData" name="postMediData" bindingOperationName="postMediData" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ad64b873-999c-49df-b53f-564f9db2134d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://service.sample.durdans.com" xmlns:xsd="http://dto.service.sample.durdans.com/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <ser:postMediData>
+         <!--Optional:-->
+         <ser:patient>
+            <!--Optional:-->
+            <xsd:insurer>
+               <!--Optional:-->
+               <xsd:insurerEmail>?</xsd:insurerEmail>
+               <!--Optional:-->
+               <xsd:insurerName>?</xsd:insurerName>
+               <!--Optional:-->
+               <xsd:insurerPhone>?</xsd:insurerPhone>
+            </xsd:insurer>
+            <!--Optional:-->
+            <xsd:medical>
+               <!--Optional:-->
+               <xsd:condition>?</xsd:condition>
+               <!--Optional:-->
+               <xsd:treatment>?</xsd:treatment>
+            </xsd:medical>
+            <!--Optional:-->
+            <xsd:parentGuardian>
+               <!--Optional:-->
+               <xsd:guardianEmail>?</xsd:guardianEmail>
+               <!--Optional:-->
+               <xsd:guardianName>?</xsd:guardianName>
+               <!--Optional:-->
+               <xsd:guardianPhone>?</xsd:guardianPhone>
+            </xsd:parentGuardian>
+            <!--Optional:-->
+            <xsd:patientContact>
+               <!--Optional:-->
+               <xsd:address>?</xsd:address>
+               <!--Optional:-->
+               <xsd:email>?</xsd:email>
+               <!--Optional:-->
+               <xsd:phone>?</xsd:phone>
+            </xsd:patientContact>
+            <!--Optional:-->
+            <xsd:patientFullName>?</xsd:patientFullName>
+            <!--Optional:-->
+            <xsd:patientId>?</xsd:patientId>
+            <!--Optional:-->
+            <xsd:physician>
+               <!--Optional:-->
+               <xsd:physicianEmail>?</xsd:physicianEmail>
+               <!--Optional:-->
+               <xsd:physicianName>?</xsd:physicianName>
+               <!--Optional:-->
+               <xsd:physicianPhone>?</xsd:physicianPhone>
+            </xsd:physician>
+         </ser:patient>
+      </ser:postMediData>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:postMediData"/></con:call></con:operation><con:operation id="de55c9d9-5b05-43d8-942f-0061ec3d3911" isOneWay="false" action="urn:putMediData" name="putMediData" bindingOperationName="putMediData" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="396d5960-da48-4f1a-b07d-a73109763ff9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://service.sample.durdans.com" xmlns:xsd="http://dto.service.sample.durdans.com/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <ser:putMediData>
+         <!--Optional:-->
+         <ser:patient>
+            <!--Optional:-->
+            <xsd:insurer>
+               <!--Optional:-->
+               <xsd:insurerEmail>?</xsd:insurerEmail>
+               <!--Optional:-->
+               <xsd:insurerName>?</xsd:insurerName>
+               <!--Optional:-->
+               <xsd:insurerPhone>?</xsd:insurerPhone>
+            </xsd:insurer>
+            <!--Optional:-->
+            <xsd:medical>
+               <!--Optional:-->
+               <xsd:condition>?</xsd:condition>
+               <!--Optional:-->
+               <xsd:treatment>?</xsd:treatment>
+            </xsd:medical>
+            <!--Optional:-->
+            <xsd:parentGuardian>
+               <!--Optional:-->
+               <xsd:guardianEmail>?</xsd:guardianEmail>
+               <!--Optional:-->
+               <xsd:guardianName>?</xsd:guardianName>
+               <!--Optional:-->
+               <xsd:guardianPhone>?</xsd:guardianPhone>
+            </xsd:parentGuardian>
+            <!--Optional:-->
+            <xsd:patientContact>
+               <!--Optional:-->
+               <xsd:address>?</xsd:address>
+               <!--Optional:-->
+               <xsd:email>?</xsd:email>
+               <!--Optional:-->
+               <xsd:phone>?</xsd:phone>
+            </xsd:patientContact>
+            <!--Optional:-->
+            <xsd:patientFullName>?</xsd:patientFullName>
+            <!--Optional:-->
+            <xsd:patientId>?</xsd:patientId>
+            <!--Optional:-->
+            <xsd:physician>
+               <!--Optional:-->
+               <xsd:physicianEmail>?</xsd:physicianEmail>
+               <!--Optional:-->
+               <xsd:physicianName>?</xsd:physicianName>
+               <!--Optional:-->
+               <xsd:physicianPhone>?</xsd:physicianPhone>
+            </xsd:physician>
+         </ser:patient>
+      </ser:putMediData>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:putMediData"/></con:call></con:operation><con:operation id="c75c6b96-ce3b-43ec-a6b0-9274170e3a0f" isOneWay="false" action="urn:readMediData" name="readMediData" bindingOperationName="readMediData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="50caee7f-c900-4306-b756-7dbc6628f484" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://service.sample.durdans.com">
+   <soap:Header/>
+   <soap:Body>
+      <ser:readMediData>
+         <!--Optional:-->
+         <ser:patientId>45000</ser:patientId>
+      </ser:readMediData>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>dilusha</con:username><con:password>dilusha123</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:readMediData"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="bd5fb8e1-e031-4356-9d45-e5b4ad2bb6e9" isOneWay="false" action="urn:readMediDataRecords" name="readMediDataRecords" bindingOperationName="readMediDataRecords" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cef8296a-2d29-4641-a325-38ff9420a8eb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://service.sample.durdans.com">
+   <soap:Header/>
+   <soap:Body>
+      <ser:readMediDataRecords>
+         <!--Optional:-->
+         <ser:patientId>1990</ser:patientId>
+      </ser:readMediDataRecords>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>dilusha</con:username><con:password>dilusha123</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:readMediDataRecords"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="02091574-4032-4804-8aa2-678a55da84c4" wsaVersion="NONE" name="DurdansPatientServiceSoap11Binding" type="wsdl" bindingName="{http://service.sample.durdans.com}DurdansPatientServiceSoap11Binding" soapVersion="1_1" anonymous="optional" definition="http://192.168.55.160:9763/services/DurdansPatientService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.55.160:9763/services/DurdansPatientService?wsdl"><con:part><con:url>http://192.168.55.160:9763/services/DurdansPatientService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://service.sample.durdans.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax221="http://dto.service.sample.durdans.com/xsd" xmlns:ns="http://service.sample.durdans.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax219="http://service.sample.durdans.com/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsp:Policy wsu:Id="UTOverTransport" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient"/>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:documentation>DurdansPatientService</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.sample.durdans.com" xmlns:ax220="http://service.sample.durdans.com/xsd" xmlns:ax222="http://dto.service.sample.durdans.com/xsd">
+      <xs:import namespace="http://service.sample.durdans.com/xsd"/>
+      <xs:import namespace="http://dto.service.sample.durdans.com/xsd"/>
+      <xs:element name="DurdansPatientServiceDurdansException">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DurdansException" nillable="true" type="ax220:DurdansException"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="putMediData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="patient" nillable="true" type="ax221:Patient"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteMediData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="patientId" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postMediData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="patient" nillable="true" type="ax221:Patient"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="readMediData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="patientId" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="readMediDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax221:Patient"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="readMediDataRecords">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="patientId" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="readMediDataRecordsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax221:Patient"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.sample.durdans.com/xsd">
+      <xs:complexType name="DurdansException">
+        <xs:sequence/>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://dto.service.sample.durdans.com/xsd">
+      <xs:complexType name="Patient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="insurer" nillable="true" type="ax221:Insurer"/>
+          <xs:element minOccurs="0" name="medical" nillable="true" type="ax221:Medical"/>
+          <xs:element minOccurs="0" name="parentGuardian" nillable="true" type="ax221:ParentGuardian"/>
+          <xs:element minOccurs="0" name="patientContact" nillable="true" type="ax221:PatientContact"/>
+          <xs:element minOccurs="0" name="patientFullName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="patientId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="physician" nillable="true" type="ax221:Physician"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Insurer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="insurerEmail" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="insurerName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="insurerPhone" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Medical">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="condition" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="treatment" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParentGuardian">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="guardianEmail" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="guardianName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="guardianPhone" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PatientContact">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Physician">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="physicianEmail" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="physicianName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="physicianPhone" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="deleteMediDataRequest">
+    <wsdl:part name="parameters" element="ns:deleteMediData"/>
+  </wsdl:message>
+  <wsdl:message name="DurdansPatientServiceDurdansException">
+    <wsdl:part name="parameters" element="ns:DurdansPatientServiceDurdansException"/>
+  </wsdl:message>
+  <wsdl:message name="postMediDataRequest">
+    <wsdl:part name="parameters" element="ns:postMediData"/>
+  </wsdl:message>
+  <wsdl:message name="readMediDataRecordsRequest">
+    <wsdl:part name="parameters" element="ns:readMediDataRecords"/>
+  </wsdl:message>
+  <wsdl:message name="readMediDataRecordsResponse">
+    <wsdl:part name="parameters" element="ns:readMediDataRecordsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="putMediDataRequest">
+    <wsdl:part name="parameters" element="ns:putMediData"/>
+  </wsdl:message>
+  <wsdl:message name="readMediDataRequest">
+    <wsdl:part name="parameters" element="ns:readMediData"/>
+  </wsdl:message>
+  <wsdl:message name="readMediDataResponse">
+    <wsdl:part name="parameters" element="ns:readMediDataResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="DurdansPatientServicePortType">
+    <wsdl:operation name="deleteMediData">
+      <wsdl:input message="ns:deleteMediDataRequest" wsaw:Action="urn:deleteMediData"/>
+      <wsdl:fault message="ns:DurdansPatientServiceDurdansException" name="DurdansPatientServiceDurdansException" wsaw:Action="urn:deleteMediDataDurdansPatientServiceDurdansException"/>
+    </wsdl:operation>
+    <wsdl:operation name="postMediData">
+      <wsdl:input message="ns:postMediDataRequest" wsaw:Action="urn:postMediData"/>
+      <wsdl:fault message="ns:DurdansPatientServiceDurdansException" name="DurdansPatientServiceDurdansException" wsaw:Action="urn:postMediDataDurdansPatientServiceDurdansException"/>
+    </wsdl:operation>
+    <wsdl:operation name="readMediDataRecords">
+      <wsdl:input message="ns:readMediDataRecordsRequest" wsaw:Action="urn:readMediDataRecords"/>
+      <wsdl:output message="ns:readMediDataRecordsResponse" wsaw:Action="urn:readMediDataRecordsResponse"/>
+      <wsdl:fault message="ns:DurdansPatientServiceDurdansException" name="DurdansPatientServiceDurdansException" wsaw:Action="urn:readMediDataRecordsDurdansPatientServiceDurdansException"/>
+    </wsdl:operation>
+    <wsdl:operation name="putMediData">
+      <wsdl:input message="ns:putMediDataRequest" wsaw:Action="urn:putMediData"/>
+      <wsdl:fault message="ns:DurdansPatientServiceDurdansException" name="DurdansPatientServiceDurdansException" wsaw:Action="urn:putMediDataDurdansPatientServiceDurdansException"/>
+    </wsdl:operation>
+    <wsdl:operation name="readMediData">
+      <wsdl:input message="ns:readMediDataRequest" wsaw:Action="urn:readMediData"/>
+      <wsdl:output message="ns:readMediDataResponse" wsaw:Action="urn:readMediDataResponse"/>
+      <wsdl:fault message="ns:DurdansPatientServiceDurdansException" name="DurdansPatientServiceDurdansException" wsaw:Action="urn:readMediDataDurdansPatientServiceDurdansException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DurdansPatientServiceSoap11Binding" type="ns:DurdansPatientServicePortType">
+    <wsp:PolicyReference URI="#UTOverTransport" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="deleteMediData">
+      <soap:operation soapAction="urn:deleteMediData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="postMediData">
+      <soap:operation soapAction="urn:postMediData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readMediDataRecords">
+      <soap:operation soapAction="urn:readMediDataRecords" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="putMediData">
+      <soap:operation soapAction="urn:putMediData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readMediData">
+      <soap:operation soapAction="urn:readMediData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DurdansPatientServiceSoap12Binding" type="ns:DurdansPatientServicePortType">
+    <wsp:PolicyReference URI="#UTOverTransport" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="deleteMediData">
+      <soap12:operation soapAction="urn:deleteMediData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap12:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="postMediData">
+      <soap12:operation soapAction="urn:postMediData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap12:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readMediDataRecords">
+      <soap12:operation soapAction="urn:readMediDataRecords" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap12:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="putMediData">
+      <soap12:operation soapAction="urn:putMediData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap12:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readMediData">
+      <soap12:operation soapAction="urn:readMediData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DurdansPatientServiceDurdansException">
+        <soap12:fault use="literal" name="DurdansPatientServiceDurdansException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DurdansPatientServiceHttpBinding" type="ns:DurdansPatientServicePortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="deleteMediData">
+      <http:operation location="deleteMediData"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="postMediData">
+      <http:operation location="postMediData"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="readMediDataRecords">
+      <http:operation location="readMediDataRecords"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="putMediData">
+      <http:operation location="putMediData"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="readMediData">
+      <http:operation location="readMediData"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DurdansPatientService">
+    <wsdl:port name="DurdansPatientServiceHttpsSoap11Endpoint" binding="ns:DurdansPatientServiceSoap11Binding">
+      <soap:address location="https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="DurdansPatientServiceHttpsSoap12Endpoint" binding="ns:DurdansPatientServiceSoap12Binding">
+      <soap12:address location="https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap12Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="DurdansPatientServiceHttpsEndpoint" binding="ns:DurdansPatientServiceHttpBinding">
+      <http:address location="https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsEndpoint/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap11Endpoint/</con:endpoint></con:endpoints><con:operation id="8d67bbf5-ec58-4778-8f76-996dbcffd1d7" isOneWay="false" action="urn:deleteMediData" name="deleteMediData" bindingOperationName="deleteMediData" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9a3a034d-ec57-4654-bf6f-33b32dc632c9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.sample.durdans.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:deleteMediData>
+         <!--Optional:-->
+         <ser:patientId>?</ser:patientId>
+      </ser:deleteMediData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:deleteMediData"/></con:call></con:operation><con:operation id="9e3066f0-a477-40ed-b39b-845780f40a4b" isOneWay="false" action="urn:postMediData" name="postMediData" bindingOperationName="postMediData" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f8b54a4c-6918-47b4-8df3-9e650ff99da4" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.sample.durdans.com" xmlns:xsd="http://dto.service.sample.durdans.com/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:postMediData>
+         <!--Optional:-->
+         <ser:patient>
+            <!--Optional:-->
+            <xsd:insurer>
+               <!--Optional:-->
+               <xsd:insurerEmail>?</xsd:insurerEmail>
+               <!--Optional:-->
+               <xsd:insurerName>?</xsd:insurerName>
+               <!--Optional:-->
+               <xsd:insurerPhone>?</xsd:insurerPhone>
+            </xsd:insurer>
+            <!--Optional:-->
+            <xsd:medical>
+               <!--Optional:-->
+               <xsd:condition>?</xsd:condition>
+               <!--Optional:-->
+               <xsd:treatment>?</xsd:treatment>
+            </xsd:medical>
+            <!--Optional:-->
+            <xsd:parentGuardian>
+               <!--Optional:-->
+               <xsd:guardianEmail>?</xsd:guardianEmail>
+               <!--Optional:-->
+               <xsd:guardianName>?</xsd:guardianName>
+               <!--Optional:-->
+               <xsd:guardianPhone>?</xsd:guardianPhone>
+            </xsd:parentGuardian>
+            <!--Optional:-->
+            <xsd:patientContact>
+               <!--Optional:-->
+               <xsd:address>?</xsd:address>
+               <!--Optional:-->
+               <xsd:email>?</xsd:email>
+               <!--Optional:-->
+               <xsd:phone>?</xsd:phone>
+            </xsd:patientContact>
+            <!--Optional:-->
+            <xsd:patientFullName>ana</xsd:patientFullName>
+            <!--Optional:-->
+            <xsd:patientId>dilu@gmail.com</xsd:patientId>
+            <!--Optional:-->
+            <xsd:physician>
+               <!--Optional:-->
+               <xsd:physicianEmail>?</xsd:physicianEmail>
+               <!--Optional:-->
+               <xsd:physicianName>?</xsd:physicianName>
+               <!--Optional:-->
+               <xsd:physicianPhone>?</xsd:physicianPhone>
+            </xsd:physician>
+         </ser:patient>
+      </ser:postMediData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>dilusha</con:username><con:password>dilusha123</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:postMediData"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ce857859-cfa8-4e35-a62c-c56a29d267ff" isOneWay="false" action="urn:putMediData" name="putMediData" bindingOperationName="putMediData" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ad0fcf77-f72f-41be-8ca2-66437ea20beb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.sample.durdans.com" xmlns:xsd="http://dto.service.sample.durdans.com/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:putMediData>
+         <!--Optional:-->
+         <ser:patient>
+            <!--Optional:-->
+            <xsd:insurer>
+               <!--Optional:-->
+               <xsd:insurerEmail>?</xsd:insurerEmail>
+               <!--Optional:-->
+               <xsd:insurerName>?</xsd:insurerName>
+               <!--Optional:-->
+               <xsd:insurerPhone>?</xsd:insurerPhone>
+            </xsd:insurer>
+            <!--Optional:-->
+            <xsd:medical>
+               <!--Optional:-->
+               <xsd:condition>?</xsd:condition>
+               <!--Optional:-->
+               <xsd:treatment>?</xsd:treatment>
+            </xsd:medical>
+            <!--Optional:-->
+            <xsd:parentGuardian>
+               <!--Optional:-->
+               <xsd:guardianEmail>?</xsd:guardianEmail>
+               <!--Optional:-->
+               <xsd:guardianName>?</xsd:guardianName>
+               <!--Optional:-->
+               <xsd:guardianPhone>?</xsd:guardianPhone>
+            </xsd:parentGuardian>
+            <!--Optional:-->
+            <xsd:patientContact>
+               <!--Optional:-->
+               <xsd:address>?</xsd:address>
+               <!--Optional:-->
+               <xsd:email>?</xsd:email>
+               <!--Optional:-->
+               <xsd:phone>?</xsd:phone>
+            </xsd:patientContact>
+            <!--Optional:-->
+            <xsd:patientFullName>?</xsd:patientFullName>
+            <!--Optional:-->
+            <xsd:patientId>?</xsd:patientId>
+            <!--Optional:-->
+            <xsd:physician>
+               <!--Optional:-->
+               <xsd:physicianEmail>?</xsd:physicianEmail>
+               <!--Optional:-->
+               <xsd:physicianName>?</xsd:physicianName>
+               <!--Optional:-->
+               <xsd:physicianPhone>?</xsd:physicianPhone>
+            </xsd:physician>
+         </ser:patient>
+      </ser:putMediData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:putMediData"/></con:call></con:operation><con:operation id="9d18fb03-5d3d-4b47-8490-108324d56031" isOneWay="false" action="urn:readMediData" name="readMediData" bindingOperationName="readMediData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6633ddb7-e7f5-465e-8f83-277e9e4e5a38" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.sample.durdans.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:readMediData>
+         <!--Optional:-->
+         <ser:patientId>32</ser:patientId>
+      </ser:readMediData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>dilusha</con:username><con:password>dilusha123</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:readMediData"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="53c5a9af-74f3-40a5-89cd-cf21564e9cb3" isOneWay="false" action="urn:readMediDataRecords" name="readMediDataRecords" bindingOperationName="readMediDataRecords" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a54a4516-906c-4db7-a15e-42f416e63619" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.55.160:9443/services/DurdansPatientService.DurdansPatientServiceHttpsSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.sample.durdans.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:readMediDataRecords>
+         <!--Optional:-->
+         <ser:patientId>?</ser:patientId>
+      </ser:readMediDataRecords>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:readMediDataRecords"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
