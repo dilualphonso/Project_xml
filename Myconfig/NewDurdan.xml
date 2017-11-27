@@ -1,41 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api xmlns="http://ws.apache.org/ns/synapse" name="NewDurdan" context="/new">
-   <resource methods="POST" url-mapping="/*">
+  <resource methods="POST" url-mapping="/*">
       <inSequence>
          <property name="Authorization"
                    value="Basic ZGlsdXNoYTpkaWx1c2hhMTIz"
                    scope="transport"/>
-         <property name="foo" expression="get-property('query.param.patientFullName')"/>
-         <property name="bar" expression="get-property('query.param.id')"/>
+           <property name="foo" expression="get-property('query.param.insurerEmail')"/>
+         <property name="b" expression="get-property('query.param.insurerName')"/>
+         <property name="ba" expression="get-property('query.param.insurerPhone')"/>
+         <property name="bar" expression="get-property('query.param.condition')"/>
+         <property name="c" expression="get-property('query.param.treatment')"/>
+         <property name="d" expression="get-property('query.param.guardianEmail')"/>
+         <property name="e" expression="get-property('query.param.guardianName')"/>
+         <property name="f" expression="get-property('query.param.guardianPhone')"/>
+         <property name="g" expression="get-property('query.param.address')"/>
+         <property name="h" expression="get-property('query.param.email')"/>
+         <property name="i" expression="get-property('query.param.phone')"/>
+         <property name="j" expression="get-property('query.param.patientFullName')"/>
+         <property name="k" expression="get-property('query.param.id')"/>
+         <property name="l" expression="get-property('query.param.physicianEmail')"/>
+         <property name="m" expression="get-property('query.param.physicianName')"/>
+         <property name="n" expression="get-property('query.param.physicianPhone')"/>
          <payloadFactory media-type="xml">
             <format>
-               <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
                                  xmlns:xsd="http://dto.service.sample.durdans.com/xsd"
                                  xmlns:ser="http://service.sample.durdans.com">
                   <soapenv:Header>
                      <some>12</some>
                   </soapenv:Header>
                   <soapenv:Body>
-                     <ser:postMediData><!--Optional:--><ser:patient><!--Optional:--><xsd:insurer><!--Optional:--><xsd:insurerEmail>?</xsd:insurerEmail>
-                              <!--Optional:--><xsd:insurerName>?</xsd:insurerName>
-                              <!--Optional:--><xsd:insurerPhone>?</xsd:insurerPhone>
+                     <ser:postMediData><!--Optional:--><ser:patient><!--Optional:--><xsd:insurer><!--Optional:--><xsd:insurerEmail>$1</xsd:insurerEmail>
+                              <!--Optional:--><xsd:insurerName>$2</xsd:insurerName>
+                              <!--Optional:--><xsd:insurerPhone>$3</xsd:insurerPhone>
                            </xsd:insurer>
-                           <!--Optional:--><xsd:medical><!--Optional:--><xsd:condition>?</xsd:condition>
-                              <!--Optional:--><xsd:treatment>?</xsd:treatment>
+                           <!--Optional:--><xsd:medical><!--Optional:--><xsd:condition>$4</xsd:condition>
+                              <!--Optional:--><xsd:treatment>$5</xsd:treatment>
                            </xsd:medical>
-                           <!--Optional:--><xsd:parentGuardian><!--Optional:--><xsd:guardianEmail>?</xsd:guardianEmail>
-                              <!--Optional:--><xsd:guardianName>?</xsd:guardianName>
-                              <!--Optional:--><xsd:guardianPhone>?</xsd:guardianPhone>
+                           <!--Optional:--><xsd:parentGuardian><!--Optional:--><xsd:guardianEmail>$6</xsd:guardianEmail>
+                              <!--Optional:--><xsd:guardianName>$7</xsd:guardianName>
+                              <!--Optional:--><xsd:guardianPhone>$8</xsd:guardianPhone>
                            </xsd:parentGuardian>
-                           <!--Optional:--><xsd:patientContact><!--Optional:--><xsd:address>?</xsd:address>
-                              <!--Optional:--><xsd:email>?</xsd:email>
-                              <!--Optional:--><xsd:phone>?</xsd:phone>
+                           <!--Optional:--><xsd:patientContact><!--Optional:--><xsd:address>$9</xsd:address>
+                              <!--Optional:--><xsd:email>$10</xsd:email>
+                              <!--Optional:--><xsd:phone>$11</xsd:phone>
                            </xsd:patientContact>
-                           <!--Optional:--><xsd:patientFullName>$1</xsd:patientFullName>
-                           <!--Optional:--><xsd:patientId>$2</xsd:patientId>
-                           <!--Optional:--><xsd:physician><!--Optional:--><xsd:physicianEmail>?</xsd:physicianEmail>
-                              <!--Optional:--><xsd:physicianName>?</xsd:physicianName>
-                              <!--Optional:--><xsd:physicianPhone>?</xsd:physicianPhone>
+                           <!--Optional:--><xsd:patientFullName>$12</xsd:patientFullName>
+                           <!--Optional:--><xsd:patientId>$13</xsd:patientId>
+                           <!--Optional:--><xsd:physician><!--Optional:--><xsd:physicianEmail>$14</xsd:physicianEmail>
+                              <!--Optional:--><xsd:physicianName>$15</xsd:physicianName>
+                              <!--Optional:--><xsd:physicianPhone>$16</xsd:physicianPhone>
                            </xsd:physician>
                         </ser:patient>
                      </ser:postMediData>
@@ -43,8 +57,24 @@
                </soapenv:Envelope>
             </format>
             <args>
+                 <arg evaluator="xml" expression="//insurerEmail"/>
+               <arg evaluator="xml" expression="//insurerName"/>
+               <arg evaluator="xml" expression="//insurerPhone"/>
+               <arg evaluator="xml" expression="//condition"/>
+               <arg evaluator="xml" expression="//treatment"/>
+               <arg evaluator="xml" expression="//guardianEmail"/>
+               <arg evaluator="xml" expression="//guardianName"/>
+               <arg evaluator="xml" expression="//guardianPhone"/>
+               <arg evaluator="xml" expression="//address"/>
+               <arg evaluator="xml" expression="//email"/>
+               <arg evaluator="xml" expression="//phone"/>
                <arg evaluator="xml" expression="//patientFullName"/>
                <arg evaluator="xml" expression="//id"/>
+               <arg evaluator="xml" expression="//physicianEmail"/>
+               <arg evaluator="xml" expression="//physicianName"/>
+               <arg evaluator="xml" expression="//physicianPhone"/>
+   <arg evaluator="xml" expression="//patientFullName"/>
+               <arg evaluator="xml" expression="//id"/>>
             </args>
          </payloadFactory>
          <property name="SOAPAction" value="urn:postMediData" scope="transport"/>
@@ -73,37 +103,51 @@
          <property name="Authorization"
                    value="Basic ZGlsdXNoYTpkaWx1c2hhMTIz"
                    scope="transport"/>
-         <property name="id" expression="get-property('query.param.patientFullName')"/>
-         <property name="name" expression="get-property('query.param.id')"/>
+        <property name="foo" expression="get-property('query.param.insurerEmail')"/>
+         <property name="b" expression="get-property('query.param.insurerName')"/>
+         <property name="ba" expression="get-property('query.param.insurerPhone')"/>
+         <property name="bar" expression="get-property('query.param.condition')"/>
+         <property name="c" expression="get-property('query.param.treatment')"/>
+         <property name="d" expression="get-property('query.param.guardianEmail')"/>
+         <property name="e" expression="get-property('query.param.guardianName')"/>
+         <property name="f" expression="get-property('query.param.guardianPhone')"/>
+         <property name="g" expression="get-property('query.param.address')"/>
+         <property name="h" expression="get-property('query.param.email')"/>
+         <property name="i" expression="get-property('query.param.phone')"/>
+         <property name="j" expression="get-property('query.param.patientFullName')"/>
+         <property name="k" expression="get-property('query.param.id')"/>
+         <property name="l" expression="get-property('query.param.physicianEmail')"/>
+         <property name="m" expression="get-property('query.param.physicianName')"/>
+         <property name="n" expression="get-property('query.param.physicianPhone')"/>
          <payloadFactory media-type="xml">
             <format>
-               <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
                                  xmlns:xsd="http://dto.service.sample.durdans.com/xsd"
                                  xmlns:ser="http://service.sample.durdans.com">
                   <soapenv:Header>
                      <some>12</some>
                   </soapenv:Header>
                   <soapenv:Body>
-                     <ser:putMediData><!--Optional:--><ser:patient><!--Optional:--><xsd:insurer><!--Optional:--><xsd:insurerEmail>?</xsd:insurerEmail>
-                              <!--Optional:--><xsd:insurerName>?</xsd:insurerName>
-                              <!--Optional:--><xsd:insurerPhone>?</xsd:insurerPhone>
+                     <ser:putMediData><!--Optional:--><ser:patient><!--Optional:--><xsd:insurer><!--Optional:--><xsd:insurerEmail>$1</xsd:insurerEmail>
+                              <!--Optional:--><xsd:insurerName>$2</xsd:insurerName>
+                              <!--Optional:--><xsd:insurerPhone>$3</xsd:insurerPhone>
                            </xsd:insurer>
-                           <!--Optional:--><xsd:medical><!--Optional:--><xsd:condition>?</xsd:condition>
-                              <!--Optional:--><xsd:treatment>?</xsd:treatment>
+                           <!--Optional:--><xsd:medical><!--Optional:--><xsd:condition>$4</xsd:condition>
+                              <!--Optional:--><xsd:treatment>$5</xsd:treatment>
                            </xsd:medical>
-                           <!--Optional:--><xsd:parentGuardian><!--Optional:--><xsd:guardianEmail>?</xsd:guardianEmail>
-                              <!--Optional:--><xsd:guardianName>?</xsd:guardianName>
-                              <!--Optional:--><xsd:guardianPhone>?</xsd:guardianPhone>
+                           <!--Optional:--><xsd:parentGuardian><!--Optional:--><xsd:guardianEmail>$6</xsd:guardianEmail>
+                              <!--Optional:--><xsd:guardianName>$7</xsd:guardianName>
+                              <!--Optional:--><xsd:guardianPhone>$8</xsd:guardianPhone>
                            </xsd:parentGuardian>
-                           <!--Optional:--><xsd:patientContact><!--Optional:--><xsd:address>?</xsd:address>
-                              <!--Optional:--><xsd:email>?</xsd:email>
-                              <!--Optional:--><xsd:phone>?</xsd:phone>
+                           <!--Optional:--><xsd:patientContact><!--Optional:--><xsd:address>$9</xsd:address>
+                              <!--Optional:--><xsd:email>$10</xsd:email>
+                              <!--Optional:--><xsd:phone>$11</xsd:phone>
                            </xsd:patientContact>
-                           <!--Optional:--><xsd:patientFullName>$1</xsd:patientFullName>
-                           <!--Optional:--><xsd:patientId>$2</xsd:patientId>
-                           <!--Optional:--><xsd:physician><!--Optional:--><xsd:physicianEmail>?</xsd:physicianEmail>
-                              <!--Optional:--><xsd:physicianName>?</xsd:physicianName>
-                              <!--Optional:--><xsd:physicianPhone>?</xsd:physicianPhone>
+                           <!--Optional:--><xsd:patientFullName>$12</xsd:patientFullName>
+                           <!--Optional:--><xsd:patientId>$13</xsd:patientId>
+                           <!--Optional:--><xsd:physician><!--Optional:--><xsd:physicianEmail>$14</xsd:physicianEmail>
+                              <!--Optional:--><xsd:physicianName>$15</xsd:physicianName>
+                              <!--Optional:--><xsd:physicianPhone>$16</xsd:physicianPhone>
                            </xsd:physician>
                         </ser:patient>
                      </ser:putMediData>
@@ -111,7 +155,23 @@
                </soapenv:Envelope>
             </format>
             <args>
+              <arg evaluator="xml" expression="//insurerEmail"/>
+               <arg evaluator="xml" expression="//insurerName"/>
+               <arg evaluator="xml" expression="//insurerPhone"/>
+               <arg evaluator="xml" expression="//condition"/>
+               <arg evaluator="xml" expression="//treatment"/>
+               <arg evaluator="xml" expression="//guardianEmail"/>
+               <arg evaluator="xml" expression="//guardianName"/>
+               <arg evaluator="xml" expression="//guardianPhone"/>
+               <arg evaluator="xml" expression="//address"/>
+               <arg evaluator="xml" expression="//email"/>
+               <arg evaluator="xml" expression="//phone"/>
                <arg evaluator="xml" expression="//patientFullName"/>
+               <arg evaluator="xml" expression="//id"/>
+               <arg evaluator="xml" expression="//physicianEmail"/>
+               <arg evaluator="xml" expression="//physicianName"/>
+               <arg evaluator="xml" expression="//physicianPhone"/>
+                <arg evaluator="xml" expression="//patientFullName"/>
                <arg evaluator="xml" expression="//id"/>
             </args>
          </payloadFactory>
@@ -136,119 +196,19 @@
                    type="STRING"/>
       </outSequence>
    </resource>
-   <resource methods="GET" uri-template="/{id}">
+   <resource methods="GET" uri-template="/{+id}">
       <inSequence>
          <property name="Authorization"
                    value="Basic ZGlsdXNoYTpkaWx1c2hhMTIz"
                    scope="transport"/>
+          <class name="org.wso2.sample.JWTRoleReader">
+                  <property name="JWT_JSON_Array" value="literal"/>
+               </class>
          <log>
             <property name="USER_ROLE" expression="get-property('USER_ROLE')"/>
          </log>
-         <filter xpath="get-property('USER_ROLE')='Patient'">
-            <then>
-               <payloadFactory media-type="xml">
-                  <format>
-                     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-                        <soapenv:Header>
-                           <some>12</some>
-                        </soapenv:Header>
-                        <soapenv:Body>
-                           <ser:readMediData xmlns:ser="http://service.sample.durdans.com">
-                              <ser:patientId>$1</ser:patientId>
-                           </ser:readMediData>
-                        </soapenv:Body>
-                     </soapenv:Envelope>
-                  </format>
-                  <args>
-                     <arg evaluator="xml" expression="get-property('uri.var.id')"/>
-                  </args>
-               </payloadFactory>
-               <header name="Action" value="urn:readMediData"/>
-               <property name="SOAPAction" value="urn:readMediData" scope="transport"/>
-               <send>
-                  <endpoint>
-                     <address uri="https://192.168.55.160:9443/services/DurdansPatientService"
-                              format="soap11"/>
-                  </endpoint>
-               </send>
-            </then>
-            <else>
-               <filter xpath="get-property('USER_ROLE')='Physician'">
-                  <then>
-                     <payloadFactory media-type="xml">
-                        <format>
-                           <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-                              <soapenv:Header>
-                                 <some>12</some>
-                              </soapenv:Header>
-                              <soapenv:Body>
-                                 <ser:readMediDataRecords xmlns:ser="http://service.sample.durdans.com"><!--Optional:--><ser:patientId>$1</ser:patientId>
-                                 </ser:readMediDataRecords>
-                              </soapenv:Body>
-                           </soapenv:Envelope>
-                        </format>
-                        <args>
-                           <arg evaluator="xml" expression="get-property('uri.var.id')"/>
-                        </args>
-                     </payloadFactory>
-                     <header name="Action" value="urn:readMediDataRecords"/>
-                     <property name="SOAPAction" value="urn:readMediDataRecords" scope="transport"/>
-                     <send>
-                        <endpoint>
-                           <address uri="https://192.168.55.160:9443/services/DurdansPatientService"
-                                    format="soap11"/>
-                        </endpoint>
-                     </send>
-                  </then>
-                  <else>
-                     <filter source="get-property('USER_ROLE')" regex="admin">
-                        <then>
-                           <property name="Authorization"
-                                     value="Basic ZGlsdXNoYTpkaWx1c2hhMTIz"
-                                     scope="transport"/>
-                           <payloadFactory media-type="xml">
-                              <format>
-                                 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-                                    <soapenv:Header>
-                                       <some>12</some>
-                                    </soapenv:Header>
-                                    <soapenv:Body>
-                                       <ser:readMediDataRecords xmlns:ser="http://service.sample.durdans.com"><!--Optional:--><ser:patientId>$1</ser:patientId>
-                                       </ser:readMediDataRecords>
-                                    </soapenv:Body>
-                                 </soapenv:Envelope>
-                              </format>
-                              <args>
-                                 <arg evaluator="xml" expression="get-property('uri.var.id')"/>
-                              </args>
-                           </payloadFactory>
-                           <header name="Action" value="urn:readMediDataRecords"/>
-                           <property name="SOAPAction" value="urn:readMediDataRecords" scope="transport"/>
-                           <log>
-                              <property name="mmmmmmmmmmmmmm" value="out the sequence"/>
-                           </log>
-                           <call>
-                              <endpoint>
-                                 <address uri="https://192.168.55.160:9443/services/DurdansPatientService"
-                                          format="soap11"/>
-                              </endpoint>
-                           </call>
-                           <log>
-                              <property name="Enrich" value="Before Enrich mediator"/>
-                           </log>
-                           <enrich>
-                              <source type="body" clone="false"/>
-                              <target type="property" action="child" property="body_of_first_call"/>
-                           </enrich>
-                           <filter source="get-property('axis2', 'HTTP_SC')" regex="200">
-                              <then>
-                                 <log>
-                                    <property name="switchlog" value="Case: first call successful"/>
-                                 </log>
-                                 <property name="Authorization"
-                                           value="Basic ZGlsdXNoYTpkaWx1c2hhMTIz"
-                                           scope="transport"/>
-                                 <payloadFactory media-type="xml">
+    
+              <payloadFactory media-type="xml">
                                     <format>
                                        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
                                           <soapenv:Header>
@@ -279,108 +239,143 @@
                                                 format="soap11"/>
                                     </endpoint>
                                  </call>
-                                 <log>
-                                    <property name="body --------------------------" expression="$body"/>
-                                 </log>
-                                 <filter source="get-property('axis2', 'HTTP_SC')" regex="200">
-                                    <then>
-                                       <log>
-                                          <property name="switchlog" value="Case: second call successful"/>
-                                       </log>
-                                       <enrich>
-                                          <source type="body" clone="false"/>
-                                          <target type="property" action="child" property="body_of_second_call"/>
-                                       </enrich>
-                                       <filter source="get-property('USER_ROLE')" regex="Patient">
-                                          <then>
-                                             <payloadFactory media-type="xml">
-                                                <format>
-                                                   <response>                           $1                           $2                     </response>
-                                                </format>
-                                                <args>
-                                                   <arg xmlns:ns="http://org.apache.synapse/xsd"
-                                                        evaluator="xml"
-                                                        expression="$ctx:body_of_first_call"/>
-                                                   <arg xmlns:ns="http://org.apache.synapse/xsd"
-                                                        evaluator="xml"
-                                                        expression="$ctx:body_of_second_call"/>
-                                                </args>
-                                             </payloadFactory>
-                                             <property name="messageType"
-                                                       value="application/json"
-                                                       scope="axis2"
-                                                       type="STRING"/>
-                                             <respond/>
-                                          </then>
-                                          <else>
-                                             <filter source="get-property('USER_ROLE')" regex="Physician">
-                                                <then>
-                                                   <payloadFactory media-type="xml">
-                                                      <format>
-                                                         <response>                           $1                     </response>
-                                                      </format>
-                                                      <args>
-                                                         <arg xmlns:ns="http://org.apache.synapse/xsd"
-                                                              evaluator="xml"
-                                                              expression="$ctx:body_of_first_call"/>
-                                                      </args>
-                                                   </payloadFactory>
-                                                   <respond/>
-                                                </then>
-                                                <else>
-                                                   <payloadFactory media-type="xml">
-                                                      <format>
-                                                         <response>                           $1                     </response>
-                                                      </format>
-                                                      <args>
-                                                         <arg xmlns:ns="http://org.apache.synapse/xsd"
-                                                              evaluator="xml"
-                                                              expression="$ctx:body_of_second_call"/>
-                                                      </args>
-                                                   </payloadFactory>
-                                                   <respond/>
-                                                </else>
-                                             </filter>
-                                          </else>
-                                       </filter>
-                                    </then>
-                                    <else>
-                                       <log>
-                                          <property name="switchlog" value="Case: second call unsuccessful"/>
-                                       </log>
-                                       <property name="HTTP_SC" value="500" scope="axis2"/>
-                                       <payloadFactory media-type="json">
-                                          <format>{ "status": "ERROR!"}</format>
-                                          <args/>
-                                       </payloadFactory>
-                                       <respond/>
-                                    </else>
-                                 </filter>
-                              </then>
-                              <else>
-                                 <log>
-                                    <property name="switchlog" value="Case: first call unsuccessful"/>
-                                 </log>
-                                 <respond/>
-                              </else>
-                           </filter>
-                           <respond/>
-                        </then>
-                        <else>
-                           <log level="custom">
-                              <property name="test" value="testt ....."/>
+               <property xmlns:ax221="http://dto.service.sample.durdans.com/xsd"
+                         name="PatientName"
+                         expression="//ax221:patientFullName/text()"
+                         scope="default"/>
+               <property xmlns:ax221="http://dto.service.sample.durdans.com/xsd"
+                         name="PatientId"
+                         expression="//ax221:patientId/text()"
+                         scope="default"/>
+               <property xmlns:ax221="http://dto.service.sample.durdans.com/xsd"
+                         name="PatientContact"
+                         expression="//ax221:patientContact"
+                         scope="default"/>
+               <property xmlns:ax221="http://dto.service.sample.durdans.com/xsd"
+                         name="ParentGuardian"
+                         expression="//ax221:parentGuardian"
+                         scope="default"/>
+               <property xmlns:ax221="http://dto.service.sample.durdans.com/xsd"
+                         name="Insurer"
+                         expression="//ax221:insurer"
+                         scope="default"/>
+               <property xmlns:ax221="http://dto.service.sample.durdans.com/xsd"
+                         name="Physician"
+                         expression="//ax221:physician"
+                         scope="default"/>
+            <property name="Authorization"
+                                     value="Basic ZGlsdXNoYTpkaWx1c2hhMTIz"
+                                     scope="transport"/>
+               <payloadFactory media-type="xml">
+                              <format>
+                                 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                                    <soapenv:Header>
+                                       <some>12</some>
+                                    </soapenv:Header>
+                                    <soapenv:Body>
+                                       <ser:readMediDataRecords xmlns:ser="http://service.sample.durdans.com"><!--Optional:--><ser:patientId>$1</ser:patientId>
+                                       </ser:readMediDataRecords>
+                                    </soapenv:Body>
+                                 </soapenv:Envelope>
+                              </format>
+                              <args>
+                                 <arg evaluator="xml" expression="get-property('uri.var.id')"/>
+                              </args>
+                           </payloadFactory>
+                           <header name="Action" value="urn:readMediDataRecords"/>
+                           <property name="SOAPAction" value="urn:readMediDataRecords" scope="transport"/>
+                           <log>
+                              <property name="mmmmmmmmmmmmmm" value="out the sequence"/>
                            </log>
-                        </else>
-                     </filter>
-                  </else>
-               </filter>
-            </else>
-         </filter>
-         <property name="messageType"
-                   value="application/json"
-                   scope="axis2"
-                   type="STRING"/>
-      </inSequence>
+                           <call>
+                              <endpoint>
+                                 <address uri="https://192.168.55.160:9443/services/DurdansPatientService"
+                                          format="soap11"/>
+                              </endpoint>
+                           </call>
+               <property xmlns:ax221="http://dto.service.sample.durdans.com/xsd"
+                         name="Medical"
+                         expression="//ax221:Medical"
+                         scope="default"/>
+               <switch source="$axis2:HTTP_SC">
+                  <case regex="200">
+                     <switch source="get-property('USER_ROLE')">
+                        <case regex="admin">
+                           <payloadFactory media-type="xml">
+                              <format>
+                                 <patient>
+                                    <insurer>$1</insurer>
+                                    <parentGuardian>$2</parentGuardian>
+                                    <patientContact>$3</patientContact>
+                                    <patientFullName>$4</patientFullName>
+                                    <patientId>$5</patientId>
+                                 </patient>
+                              </format>
+                              <args>
+                                 <arg evaluator="xml" expression="get-property('default','Insurer')"/>
+                                 <arg evaluator="xml" expression="get-property('default','ParentGuardian')"/>
+                                 <arg evaluator="xml" expression="get-property('default','PatientContact')"/>
+                                 <arg evaluator="xml" expression="get-property('default','PatientName')"/>
+                                 <arg evaluator="xml" expression="get-property('default','PatientId')"/>
+                              </args>
+                           </payloadFactory>
+                           <property name="messageType" value="application/json" scope="axis2"/>
+                           <respond/>
+                        </case>
+                        <case regex="Physician">
+                           <payloadFactory media-type="xml">
+                              <format>
+                                 <patient>
+                                    <physician>$1</physician>
+                                    <medical>$2</medical>
+                                 
+                                    <patientId>$4</patientId>
+                                 </patient>
+                              </format>
+                              <args>
+                                 <arg evaluator="xml" expression="get-property('default','Physician')"/>
+                                 <arg evaluator="xml" expression="get-property('default','Medical')"/>
+                                <arg evaluator="xml" expression="get-property('default','PatientId')"/>
+                              </args>
+                           </payloadFactory>
+                           <property name="messageType" value="application/json" scope="axis2"/>
+                           <respond/>
+                        </case>
+                        <case regex="Patient">
+                           <payloadFactory media-type="xml">
+                              <format>
+                                 <patient>
+                                    <insurer>$1</insurer>
+                                    <parentGuardian>$2</parentGuardian>
+                                    <patientContact>$3</patientContact>
+                                    <physician>$4</physician>
+                                    <medical>$5</medical>
+                                    <patientFullName>$6</patientFullName>
+                                    <patientId>$7</patientId>
+                                 </patient>
+                              </format>
+                              <args>
+                                 <arg evaluator="xml" expression="get-property('default','Insurer')"/>
+                                 <arg evaluator="xml" expression="get-property('default','ParentGuardian')"/>
+                                 <arg evaluator="xml" expression="get-property('default','PatientContact')"/>
+                                 <arg evaluator="xml" expression="get-property('default','Physician')"/>
+                                 <arg evaluator="xml" expression="get-property('default','Medical')"/>
+                                 <arg evaluator="xml" expression="get-property('default','PatientName')"/>
+                                 <arg evaluator="xml" expression="get-property('default','PatientId')"/>
+                              </args>
+                           </payloadFactory>
+                           <property name="messageType" value="application/json" scope="axis2"/>
+                           <respond/>
+ </case>
+                     </switch>
+                  </case>
+                  <default>
+                     <property name="messageType" value="application/json" scope="axis2"/>
+                     <send/>
+                  </default>
+               </switch>
+            
+</inSequence>
       <outSequence>
          <property name="messageType"
                    value="application/json"
